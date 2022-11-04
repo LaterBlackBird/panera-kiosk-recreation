@@ -17,23 +17,26 @@ const index = () => {
     router.push("/");
   };
 
+  const navToMenu = () => {
+    router.push("/menu");
+  };
+
   return (
     <motion.div
       className={styles.container}
       initial={{ x: 10000 }}
       animate={{ x: 0 }}
-      exit={{ x: -10000 }}
       transition={{ duration: 0.75, ease: [0, 0.71, 0.2, 1.01] }}
     >
       <div className={styles.nav}>
         <ButtonSecondary
-          text={<FontAwesomeIcon icon={faArrowLeft} />}
+          text={<FontAwesomeIcon icon={faArrowLeft}/>}
           style={{ height: "70px", width: "70px", borderRadius: "50%" }}
           onClick={navHome}
         />
         <Link href="/">Join</Link>
       </div>
-      
+
       <div className={styles.options}>
         <h2
           style={{
@@ -45,8 +48,8 @@ const index = () => {
           Welcome To Panera!
         </h2>
         <ButtonPrimary text={"Sign In to MyPanera"} style={{ width: "50%" }} />
-        <ButtonSecondary text={"Continue as Guest"} style={{ width: "50%" }} />
-        <p>Swipe your MyPanera card or Credit Card to sign in.</p>
+        <ButtonSecondary text={"Continue as Guest"} style={{ width: "50%" }} onClick={navToMenu} />
+        <p>Swipe your MyPanera card or Credit Card to Sign In.</p>
       </div>
 
       <div className={styles.footer}>

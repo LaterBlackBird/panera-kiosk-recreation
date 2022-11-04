@@ -1,4 +1,4 @@
-#container {
+.container {
   height: 100vh;
   width: 100vw;
   display: grid;
@@ -75,7 +75,7 @@
   height: 10px;
   border-radius: 50%;
   background-color: white;
-  animation: 1.1s ease-in 1 expand;
+  animation: 1.5s ease-in 1 forwards expand;
 }
 
 @keyframes expand {
@@ -83,6 +83,6 @@
     scale: 0;
   }
   to {
-    scale: 1000;
+    scale: 1100;
   }
 }

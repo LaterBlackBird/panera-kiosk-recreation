@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Head from "next/head";
 
 import coffeeCup from "../public/coffee_cup.png";
 import sipAd from "../public/unlimited-sip.png";
@@ -37,45 +36,37 @@ export default function Home() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Welcome To Panera</title>
-        <meta name="description" content="A panera bread kiosk duplicat" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <motion.div
-        id={styles.container}
-        onClick={transition}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: .5 }}
-      >
-        <div id={styles.welcome}>
-          <div id={styles.welcomeInstructions}>
-            <h2>WELCOME TO PANERA</h2>
-            <h1>TAP TO ORDER</h1>
-          </div>
+    <motion.div
+      className={styles.container}
+      onClick={transition}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: .5 }}
+    >
+      <div id={styles.welcome}>
+        <div id={styles.welcomeInstructions}>
+          <h2>WELCOME TO PANERA</h2>
+          <h1>TAP TO ORDER</h1>
         </div>
+      </div>
 
-        <div id={styles.safetyInfo}>
-          <div>
-            <span>Your safety is important to us.</span>
-            <br />
-            <span>
-              This kiosk uses an antimicrobial cover and is cleaned frequently.
-            </span>
-          </div>
+      <div id={styles.safetyInfo}>
+        <div>
+          <span>Your safety is important to us.</span>
+          <br />
+          <span>
+            This kiosk uses an antimicrobial cover and is cleaned frequently.
+          </span>
         </div>
+      </div>
 
-        <div id={styles.ad}>
-          <Image src={coffeeCup} alt="a cup of coffee" id={styles.coffeeCup} />
-          <Image src={sipAd} alt="unlimted sips logo" id={styles.sipLogo} />
-          <ButtonPrimary text={"Subscribe & Save"} type={"primary"} />
-        </div>
+      <div id={styles.ad}>
+        <Image src={coffeeCup} alt="a cup of coffee" id={styles.coffeeCup} />
+        <Image src={sipAd} alt="unlimted sips logo" id={styles.sipLogo} />
+        <ButtonPrimary text={"Subscribe & Save"} type={"primary"} />
+      </div>
 
-        {userClicked && showCircle()}
-      </motion.div>
-    </>
+      {userClicked && showCircle()}
+    </motion.div>
   );
 }

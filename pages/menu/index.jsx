@@ -1,18 +1,25 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react";
+import { motion } from "framer-motion";
 
 const index = () => {
+  const transitionVariants = {
+    hidden: { x: 2000 },
+    enter: { x: 0 },
+    exit: { x: -2000 },
+  };
+
   return (
     <motion.div
-    // className={styles.container}
-    initial={{ x: 10000 }}
-    animate={{ x: 0 }}
-    exit={{ x: 30000 }}
-    transition={{ duration: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
+      // className={styles.container}
+      variants={transitionVariants}
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+      transition={{ duration: 0.75, ease: "linear" }}
     >
       Menu
-  </motion.div>
-  )
-}
+    </motion.div>
+  );
+};
 
-export default index
+export default index;

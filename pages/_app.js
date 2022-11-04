@@ -1,8 +1,9 @@
 import Head from "next/head";
+import { AnimatePresence } from "framer-motion";
 
 import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   return (
     <>
       <Head>
@@ -11,7 +12,9 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Component {...pageProps}/>
+      <AnimatePresence mode="wait" exitBeforeEnter initial={false}>
+          <Component {...pageProps} key={router.asPath} />
+      </AnimatePresence>
     </>
   );
 }

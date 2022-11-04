@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -12,6 +12,12 @@ import styles from "../../styles/Auth.module.css";
 
 const index = () => {
   const router = useRouter();
+
+  const transitionVariants = {
+    hidden: { x: 2000 },
+    enter: { x: 0 },
+    exit: { x: -2000 },
+  };
 
   const navHome = () => {
     router.push("/");
@@ -24,13 +30,15 @@ const index = () => {
   return (
     <motion.div
       className={styles.container}
-      initial={{ x: 10000 }}
-      animate={{ x: 0 }}
-      transition={{ duration: 0.75, ease: [0, 0.71, 0.2, 1.01] }}
+      variants={transitionVariants}
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+      transition={{ duration: .75, ease: "linear" }}
     >
       <div className={styles.nav}>
         <ButtonSecondary
-          text={<FontAwesomeIcon icon={faArrowLeft}/>}
+          text={<FontAwesomeIcon icon={faArrowLeft} />}
           style={{ height: "70px", width: "70px", borderRadius: "50%" }}
           onClick={navHome}
         />
@@ -48,7 +56,11 @@ const index = () => {
           Welcome To Panera!
         </h2>
         <ButtonPrimary text={"Sign In to MyPanera"} style={{ width: "50%" }} />
-        <ButtonSecondary text={"Continue as Guest"} style={{ width: "50%" }} onClick={navToMenu} />
+        <ButtonSecondary
+          text={"Continue as Guest"}
+          style={{ width: "50%" }}
+          onClick={navToMenu}
+        />
         <p>Swipe your MyPanera card or Credit Card to Sign In.</p>
       </div>
 

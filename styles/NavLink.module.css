@@ -1,0 +1,43 @@
+.nav {
+  height: 100%;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menuIconContainer {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  width: 150px;
+  margin-top: 50%;
+  border: 1px solid var(--paneraGreen);
+  border-radius: 50%;
+}
+
+.menuIcon {
+  height: 60px;
+  align-self: center;
+}
+
+.nav p{
+  font-size: 1.2em;
+}
+
+.active {
+  color: white;
+  background-color: var(--paneraGreen);
+  transition: scale 1s ease, background-color 1s ease, color 1s ease;
+  scale: 1.25;
+}
+
+.notActive {
+  color: var(--paneraGreen);
+  background-color: white;
+  transition: scale 1s ease, background-color 1s ease, color 1s ease;
+  scale: 1;
+}
+
+

@@ -9,5 +9,5 @@
   margin: 30px 0;
   width: fit-content;
   color: white;
-  background-color: #4c753f;
+  background-color: var(--paneraGreen);
 }

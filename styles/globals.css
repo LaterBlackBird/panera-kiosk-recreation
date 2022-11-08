@@ -6,6 +6,8 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     cursor: pointer;
     overflow: hidden;
+
+    --paneraGreen: #4c753f;
 }
 
 a {

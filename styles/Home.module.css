@@ -36,7 +36,7 @@
   align-self: center;
   height: 100%;
   display: flex;
-  background-color: #4c753f;
+  background-color: var(--paneraGreen);
   color: white;
   justify-content: center;
   align-items: center;

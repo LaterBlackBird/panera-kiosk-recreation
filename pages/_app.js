@@ -4,6 +4,8 @@ import { AnimatePresence } from "framer-motion";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps, router }) {
+  const getLayout = Component.getLayout || ((page) => page);
+
   return (
     <>
       <Head>
@@ -13,7 +15,7 @@ function MyApp({ Component, pageProps, router }) {
       </Head>
 
       <AnimatePresence mode="wait" exitBeforeEnter initial={false}>
-          <Component {...pageProps} key={router.asPath} />
+        {getLayout(<Component {...pageProps} />)}
       </AnimatePresence>
     </>
   );

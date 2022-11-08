@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const index = () => {
+import MenuLayout from "../../components/molecules/MenuLayout";
+
+const MenuHomePage = () => {
   const transitionVariants = {
     hidden: { x: 2000 },
     enter: { x: 0 },
@@ -10,16 +12,23 @@ const index = () => {
 
   return (
     <motion.div
-      // className={styles.container}
       variants={transitionVariants}
       initial="hidden"
       animate="enter"
       exit="exit"
       transition={{ duration: 0.75, ease: "linear" }}
     >
-      Menu
+      Menu Home Page
     </motion.div>
   );
 };
 
-export default index;
+export default MenuHomePage;
+
+MenuHomePage.getLayout = function getLayout(page) {
+  return (
+    <MenuLayout>
+      {page}
+    </MenuLayout>
+  )
+}

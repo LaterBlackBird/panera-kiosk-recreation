@@ -3,15 +3,15 @@ import React from 'react'
 import MenuLayout from "../../components/molecules/MenuLayout";
 
 
-const Sandwiches = () => {
+const Pizza = () => {
   return (
-    <div>Sandwiches</div>
+    <div>Pizza</div>
   )
 }
 
-export default Sandwiches
+export default Pizza
 
-Sandwiches.getLayout = function getLayout(page) {
+Pizza.getLayout = function getLayout(page) {
   return (
     <MenuLayout>
       {page}
